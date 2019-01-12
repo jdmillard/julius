@@ -189,8 +189,9 @@ static void draw_trade_city_info(const empire_object *object, const empire_city 
         button_border_draw(x_offset + 50, y_offset + 68, 400, 20, data.selected_button);
         index = lang_text_draw_amount(8, 0, city->cost_to_open,
                                            x_offset + 60, y_offset + 73, FONT_NORMAL_GREEN);
-        lang_text_draw(47, 6, x_offset + index + 60, y_offset + 73, FONT_NORMAL_GREEN);
-    }
+        index += lang_text_draw(47, 3, x_offset + index + 60, y_offset + 73, FONT_NORMAL_GREEN);
+        lang_text_draw(44, 28 + city->is_sea_trade, x_offset + index + 60, y_offset + 73, FONT_NORMAL_GREEN);
+	}
 }
 
 static void draw_city_info(const empire_object *object)
